@@ -1,0 +1,22 @@
+# Python virtual env (host-specific, must not go into the Linux image)
+venv/
+.venv/
+env/
+
+# Bytecode / caches
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local secrets & data (provide these via compose env / volumes instead)
+.env
+*.db
+*.sqlite3
+
+# Editor / OS cruft
+.vscode/
+.idea/
+.DS_Store

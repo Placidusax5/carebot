@@ -1,0 +1,9 @@
+# Optional heavy ML dependency for the image-detection CNN.
+# Kept out of requirements.txt so the base API/image stays lightweight.
+#
+# Install into the backend venv when you want to train / run the real CNN:
+#     pip install -r requirements-ml.txt
+#
+# Then train a model (see scripts/train_image_model.py); the API auto-loads
+# models/image_model/model.keras if present, otherwise uses the heuristic.
+tensorflow-cpu==2.21.0

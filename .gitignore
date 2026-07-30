@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Env files
+.env
+
+# Database
+database/*.db
+database/uploaded_images/*
+!database/uploaded_images/.gitkeep
+
+# Models (regenerate via scripts/train_model.py, or keep if you want to ship a pretrained one)
+# models/*.joblib
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Claude Code local settings
+.claude/settings.local.json

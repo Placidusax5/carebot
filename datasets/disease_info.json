@@ -1,0 +1,989 @@
+{
+  "Common Cold": {
+    "description": "A mild viral infection of the nose and throat, usually resolving on its own within 7-10 days.",
+    "precautions": [
+      "Rest and stay hydrated",
+      "Use a humidifier",
+      "Gargle warm salt water",
+      "Avoid close contact with others"
+    ],
+    "home_remedies": [
+      "Sip warm honey and lemon tea to soothe the throat",
+      "Inhale steam from a bowl of hot water",
+      "Gargle with warm salt water",
+      "Rest and drink plenty of warm fluids"
+    ],
+    "specialty": "General Medicine",
+    "severity": "Low",
+    "core_symptoms": [
+      "runny_nose",
+      "sneezing",
+      "sore_throat",
+      "mild_cough",
+      "congestion",
+      "mild_fever"
+    ]
+  },
+  "Influenza": {
+    "description": "A contagious respiratory illness caused by influenza viruses, more severe than the common cold.",
+    "precautions": [
+      "Rest and stay hydrated",
+      "Take fever reducers as directed",
+      "Avoid contact with others",
+      "See a doctor if symptoms worsen"
+    ],
+    "home_remedies": [
+      "Drink warm fluids like ginger or herbal tea",
+      "Take honey to ease cough and sore throat",
+      "Use a warm compress for body aches",
+      "Rest fully and keep hydrated"
+    ],
+    "specialty": "General Medicine",
+    "severity": "Medium",
+    "core_symptoms": [
+      "high_fever",
+      "body_ache",
+      "chills",
+      "fatigue",
+      "headache",
+      "dry_cough",
+      "sore_throat"
+    ]
+  },
+  "COVID-19": {
+    "description": "An infectious disease caused by the SARS-CoV-2 virus, affecting the respiratory system with a wide range of severity.",
+    "precautions": [
+      "Isolate from others",
+      "Monitor oxygen levels",
+      "Stay hydrated and rest",
+      "Seek emergency care for breathing difficulty"
+    ],
+    "home_remedies": [
+      "Stay well hydrated with warm fluids",
+      "Use steam inhalation to ease congestion",
+      "Gargle warm salt water for a sore throat",
+      "Rest and monitor your symptoms closely"
+    ],
+    "specialty": "Pulmonology / Infectious Disease",
+    "severity": "High",
+    "core_symptoms": [
+      "fever",
+      "dry_cough",
+      "fatigue",
+      "loss_of_taste",
+      "loss_of_smell",
+      "shortness_of_breath",
+      "body_ache"
+    ]
+  },
+  "Migraine": {
+    "description": "A neurological condition causing intense, throbbing headaches often with nausea and light sensitivity.",
+    "precautions": [
+      "Rest in a dark, quiet room",
+      "Apply a cold compress",
+      "Stay hydrated",
+      "Avoid known triggers"
+    ],
+    "home_remedies": [
+      "Rest in a dark, quiet room",
+      "Apply a cold compress to the forehead",
+      "Sip water to stay hydrated",
+      "Gently massage the temples and neck"
+    ],
+    "specialty": "Neurology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "severe_headache",
+      "nausea",
+      "sensitivity_to_light",
+      "sensitivity_to_sound",
+      "visual_aura",
+      "vomiting"
+    ]
+  },
+  "Tension Headache": {
+    "description": "The most common type of headache, causing mild to moderate dull, aching pain.",
+    "precautions": [
+      "Rest and reduce stress",
+      "Apply a warm or cold compress",
+      "Stay hydrated",
+      "Practice relaxation techniques"
+    ],
+    "home_remedies": [
+      "Apply a warm compress to the neck and shoulders",
+      "Practice deep breathing or meditation",
+      "Stay hydrated",
+      "Take short breaks away from screens"
+    ],
+    "specialty": "Neurology",
+    "severity": "Low",
+    "core_symptoms": [
+      "mild_headache",
+      "neck_stiffness",
+      "scalp_tenderness",
+      "fatigue",
+      "irritability"
+    ]
+  },
+  "Gastroenteritis": {
+    "description": "Inflammation of the stomach and intestines, typically due to viral or bacterial infection.",
+    "precautions": [
+      "Stay hydrated with oral rehydration solutions",
+      "Eat bland foods (BRAT diet)",
+      "Rest",
+      "Avoid dairy and fatty foods"
+    ],
+    "home_remedies": [
+      "Sip oral rehydration solution or coconut water",
+      "Eat bland foods like bananas, rice, and toast",
+      "Drink ginger tea to calm nausea",
+      "Rest and avoid dairy"
+    ],
+    "specialty": "Gastroenterology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "diarrhea",
+      "vomiting",
+      "abdominal_cramps",
+      "nausea",
+      "mild_fever",
+      "dehydration"
+    ]
+  },
+  "Food Poisoning": {
+    "description": "Illness caused by consuming contaminated food, leading to gastrointestinal distress.",
+    "precautions": [
+      "Stay hydrated",
+      "Rest the stomach with bland foods",
+      "Avoid solid food until vomiting stops",
+      "Seek care if symptoms are severe"
+    ],
+    "home_remedies": [
+      "Sip small amounts of water or ORS frequently",
+      "Try ginger or peppermint tea for nausea",
+      "Eat plain foods once vomiting stops",
+      "Rest and avoid solid food early on"
+    ],
+    "specialty": "Gastroenterology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "nausea",
+      "vomiting",
+      "diarrhea",
+      "abdominal_pain",
+      "fever",
+      "weakness"
+    ]
+  },
+  "Acid Reflux (GERD)": {
+    "description": "A digestive disorder where stomach acid frequently flows back into the esophagus.",
+    "precautions": [
+      "Avoid trigger foods",
+      "Eat smaller meals",
+      "Avoid lying down after eating",
+      "Elevate the head while sleeping"
+    ],
+    "home_remedies": [
+      "Sip cold milk or chamomile tea",
+      "Chew a small piece of fresh ginger",
+      "Avoid lying down for 2-3 hours after meals",
+      "Eat smaller, slower meals"
+    ],
+    "specialty": "Gastroenterology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "heartburn",
+      "regurgitation",
+      "chest_burning",
+      "bloating",
+      "sour_taste",
+      "difficulty_swallowing"
+    ]
+  },
+  "Peptic Ulcer": {
+    "description": "Open sores that develop on the inner lining of the stomach or upper small intestine.",
+    "precautions": [
+      "Avoid NSAIDs and alcohol",
+      "Eat smaller, frequent meals",
+      "Avoid spicy foods",
+      "Consult a doctor for evaluation"
+    ],
+    "home_remedies": [
+      "Drink cabbage juice or coconut water",
+      "Take a little honey on an empty stomach",
+      "Avoid spicy and acidic foods",
+      "Include probiotic foods like yogurt"
+    ],
+    "specialty": "Gastroenterology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "abdominal_pain",
+      "bloating",
+      "nausea",
+      "burning_stomach_pain",
+      "weight_loss",
+      "indigestion"
+    ]
+  },
+  "Irritable Bowel Syndrome": {
+    "description": "A common disorder affecting the large intestine, causing cramping and altered bowel habits.",
+    "precautions": [
+      "Identify and avoid trigger foods",
+      "Manage stress",
+      "Increase fiber gradually",
+      "Stay hydrated"
+    ],
+    "home_remedies": [
+      "Sip peppermint tea to ease cramps",
+      "Apply a warm compress to the abdomen",
+      "Add fiber-rich foods gradually",
+      "Practice stress-reducing relaxation"
+    ],
+    "specialty": "Gastroenterology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "abdominal_cramps",
+      "bloating",
+      "diarrhea",
+      "constipation",
+      "gas",
+      "mucus_in_stool"
+    ]
+  },
+  "Urinary Tract Infection": {
+    "description": "An infection in any part of the urinary system, most commonly the bladder and urethra.",
+    "precautions": [
+      "Drink plenty of water",
+      "Urinate frequently, don't hold it in",
+      "Avoid irritants like caffeine",
+      "See a doctor for antibiotics"
+    ],
+    "home_remedies": [
+      "Drink plenty of water to flush the system",
+      "Try unsweetened cranberry juice",
+      "Apply a warm heating pad to the lower abdomen",
+      "Urinate frequently and don't hold it in"
+    ],
+    "specialty": "Urology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "burning_urination",
+      "frequent_urination",
+      "cloudy_urine",
+      "pelvic_pain",
+      "mild_fever"
+    ]
+  },
+  "Kidney Stones": {
+    "description": "Hard deposits of minerals and salts that form inside the kidneys, causing significant pain when passing.",
+    "precautions": [
+      "Drink plenty of water",
+      "Reduce salt intake",
+      "Take pain relief as directed",
+      "Seek medical care for severe pain"
+    ],
+    "home_remedies": [
+      "Drink lots of water throughout the day",
+      "Try lemon water to help break down stones",
+      "Apply a warm compress for pain relief",
+      "Reduce salt in your diet"
+    ],
+    "specialty": "Urology",
+    "severity": "High",
+    "core_symptoms": [
+      "severe_flank_pain",
+      "blood_in_urine",
+      "nausea",
+      "vomiting",
+      "painful_urination",
+      "groin_pain"
+    ]
+  },
+  "Bronchitis": {
+    "description": "Inflammation of the lining of the bronchial tubes, which carry air to and from the lungs.",
+    "precautions": [
+      "Rest and stay hydrated",
+      "Use a humidifier",
+      "Avoid smoke and irritants",
+      "See a doctor if cough persists over 3 weeks"
+    ],
+    "home_remedies": [
+      "Inhale steam to loosen mucus",
+      "Drink warm honey and lemon",
+      "Use a humidifier at night",
+      "Stay hydrated and rest your voice"
+    ],
+    "specialty": "Pulmonology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "persistent_cough",
+      "mucus_production",
+      "chest_discomfort",
+      "mild_fever",
+      "fatigue",
+      "wheezing"
+    ]
+  },
+  "Pneumonia": {
+    "description": "An infection that inflames the air sacs in one or both lungs, which may fill with fluid.",
+    "precautions": [
+      "Seek medical attention promptly",
+      "Rest and stay hydrated",
+      "Take prescribed antibiotics fully",
+      "Monitor breathing closely"
+    ],
+    "home_remedies": [
+      "Rest completely and drink warm fluids",
+      "Use steam inhalation to ease breathing",
+      "Take warm honey for cough comfort",
+      "Seek medical care \u2014 home care is only supportive"
+    ],
+    "specialty": "Pulmonology",
+    "severity": "High",
+    "core_symptoms": [
+      "high_fever",
+      "productive_cough",
+      "chest_pain",
+      "shortness_of_breath",
+      "chills",
+      "fatigue"
+    ]
+  },
+  "Asthma": {
+    "description": "A chronic condition in which airways narrow, swell, and produce extra mucus, making breathing difficult.",
+    "precautions": [
+      "Avoid known triggers",
+      "Keep rescue inhaler accessible",
+      "Follow an asthma action plan",
+      "Seek emergency care for severe attacks"
+    ],
+    "home_remedies": [
+      "Sit upright and practice slow breathing",
+      "Sip warm water or ginger tea",
+      "Avoid triggers like dust and smoke",
+      "Keep your rescue inhaler nearby \u2014 seek care for severe attacks"
+    ],
+    "specialty": "Pulmonology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "wheezing",
+      "shortness_of_breath",
+      "chest_tightness",
+      "coughing",
+      "difficulty_breathing"
+    ]
+  },
+  "Allergic Rhinitis": {
+    "description": "An allergic response causing cold-like symptoms, such as sneezing and a runny nose.",
+    "precautions": [
+      "Avoid known allergens",
+      "Use air purifiers",
+      "Consider antihistamines",
+      "Keep windows closed during high pollen"
+    ],
+    "home_remedies": [
+      "Rinse nasal passages with saline",
+      "Inhale steam to clear congestion",
+      "Try a spoon of local honey",
+      "Keep windows closed during high pollen"
+    ],
+    "specialty": "ENT (Otolaryngology)",
+    "severity": "Low",
+    "core_symptoms": [
+      "sneezing",
+      "itchy_eyes",
+      "runny_nose",
+      "nasal_congestion",
+      "watery_eyes"
+    ]
+  },
+  "Sinusitis": {
+    "description": "Inflammation or swelling of the tissue lining the sinuses.",
+    "precautions": [
+      "Use saline nasal rinses",
+      "Stay hydrated",
+      "Apply warm compresses to the face",
+      "See a doctor if symptoms persist beyond 10 days"
+    ],
+    "home_remedies": [
+      "Use steam inhalation with a few drops of eucalyptus",
+      "Rinse sinuses with a saline solution",
+      "Apply a warm compress to the face",
+      "Stay well hydrated"
+    ],
+    "specialty": "ENT (Otolaryngology)",
+    "severity": "Low",
+    "core_symptoms": [
+      "facial_pain",
+      "nasal_congestion",
+      "headache",
+      "thick_nasal_discharge",
+      "reduced_smell"
+    ]
+  },
+  "Conjunctivitis": {
+    "description": "Inflammation of the membrane covering the eye, commonly known as pink eye.",
+    "precautions": [
+      "Avoid touching or rubbing eyes",
+      "Wash hands frequently",
+      "Use clean, separate towels",
+      "See a doctor if vision is affected"
+    ],
+    "home_remedies": [
+      "Apply a clean warm or cold compress to the eyes",
+      "Rinse eyes gently with cooled boiled water",
+      "Avoid rubbing the eyes",
+      "Use separate clean towels"
+    ],
+    "specialty": "Ophthalmology",
+    "severity": "Low",
+    "core_symptoms": [
+      "red_eyes",
+      "itchy_eyes",
+      "watery_eyes",
+      "eye_discharge",
+      "gritty_feeling"
+    ]
+  },
+  "Dengue Fever": {
+    "description": "A mosquito-borne viral infection causing severe flu-like illness.",
+    "precautions": [
+      "Rest and stay hydrated",
+      "Avoid aspirin/ibuprofen (use acetaminophen)",
+      "Monitor for warning signs",
+      "Seek immediate care for bleeding or severe pain"
+    ],
+    "home_remedies": [
+      "Drink plenty of fluids and ORS",
+      "Try papaya leaf juice to support recovery",
+      "Rest completely",
+      "Use acetaminophen for fever, not aspirin \u2014 seek care for warning signs"
+    ],
+    "specialty": "Infectious Disease",
+    "severity": "High",
+    "core_symptoms": [
+      "high_fever",
+      "severe_headache",
+      "joint_pain",
+      "muscle_pain",
+      "rash",
+      "nausea",
+      "pain_behind_eyes"
+    ]
+  },
+  "Malaria": {
+    "description": "A mosquito-borne disease caused by a parasite, producing recurring fever and chills.",
+    "precautions": [
+      "Seek medical care immediately for antimalarial treatment",
+      "Stay hydrated",
+      "Rest",
+      "Use mosquito protection to prevent spread"
+    ],
+    "home_remedies": [
+      "Stay hydrated with fluids and ORS",
+      "Rest fully",
+      "Use a cool compress for fever",
+      "Seek medical care immediately \u2014 remedies are only supportive"
+    ],
+    "specialty": "Infectious Disease",
+    "severity": "High",
+    "core_symptoms": [
+      "high_fever",
+      "chills",
+      "sweating",
+      "headache",
+      "nausea",
+      "muscle_pain",
+      "fatigue"
+    ]
+  },
+  "Typhoid Fever": {
+    "description": "A bacterial infection spread through contaminated food and water, causing prolonged fever.",
+    "precautions": [
+      "Seek medical care for antibiotics",
+      "Stay hydrated",
+      "Eat soft, easily digestible foods",
+      "Practice strict hand hygiene"
+    ],
+    "home_remedies": [
+      "Drink ORS and plenty of fluids",
+      "Eat soft, easily digestible foods",
+      "Sip ginger or tulsi (basil) tea",
+      "Rest \u2014 antibiotics from a doctor are essential"
+    ],
+    "specialty": "Infectious Disease",
+    "severity": "High",
+    "core_symptoms": [
+      "prolonged_fever",
+      "weakness",
+      "abdominal_pain",
+      "headache",
+      "loss_of_appetite",
+      "constipation"
+    ]
+  },
+  "Chickenpox": {
+    "description": "A highly contagious viral infection causing an itchy, blister-like rash.",
+    "precautions": [
+      "Avoid scratching the rash",
+      "Keep skin clean and cool",
+      "Isolate to prevent spread",
+      "Trim nails to reduce skin damage"
+    ],
+    "home_remedies": [
+      "Take a cool oatmeal or baking soda bath",
+      "Apply calamine lotion to reduce itching",
+      "Keep nails trimmed to avoid scratching",
+      "Wear loose, soft cotton clothing"
+    ],
+    "specialty": "Dermatology / Infectious Disease",
+    "severity": "Medium",
+    "core_symptoms": [
+      "itchy_rash",
+      "fluid_filled_blisters",
+      "mild_fever",
+      "fatigue",
+      "loss_of_appetite"
+    ]
+  },
+  "Measles": {
+    "description": "A highly contagious viral infection of the respiratory system, causing a distinctive rash.",
+    "precautions": [
+      "Isolate to prevent spread",
+      "Rest and stay hydrated",
+      "Manage fever",
+      "Seek care for breathing difficulty"
+    ],
+    "home_remedies": [
+      "Rest in a comfortable, dimly lit room",
+      "Stay hydrated with fluids",
+      "Use a cool compress for fever",
+      "Eat vitamin A-rich foods \u2014 seek medical guidance"
+    ],
+    "specialty": "Pediatrics / Infectious Disease",
+    "severity": "High",
+    "core_symptoms": [
+      "high_fever",
+      "cough",
+      "runny_nose",
+      "red_eyes",
+      "rash",
+      "koplik_spots"
+    ]
+  },
+  "Hypertension": {
+    "description": "Persistently elevated blood pressure in the arteries, a major cardiovascular risk factor.",
+    "precautions": [
+      "Reduce salt intake",
+      "Exercise regularly",
+      "Manage stress",
+      "Monitor blood pressure and take medication as prescribed"
+    ],
+    "home_remedies": [
+      "Reduce salt and eat potassium-rich foods",
+      "Practice deep breathing or meditation",
+      "Take regular brisk walks",
+      "Limit caffeine and alcohol"
+    ],
+    "specialty": "Cardiology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "headache",
+      "dizziness",
+      "blurred_vision",
+      "chest_pain",
+      "shortness_of_breath",
+      "nosebleed"
+    ]
+  },
+  "Type 2 Diabetes": {
+    "description": "A chronic condition affecting how the body processes blood sugar (glucose).",
+    "precautions": [
+      "Monitor blood sugar regularly",
+      "Follow a balanced diet",
+      "Exercise regularly",
+      "Take medication as prescribed"
+    ],
+    "home_remedies": [
+      "Include fiber-rich, whole foods",
+      "Take a short walk after meals",
+      "Stay hydrated with water",
+      "Add cinnamon or fenugreek to meals (with your doctor's okay)"
+    ],
+    "specialty": "Endocrinology",
+    "severity": "High",
+    "core_symptoms": [
+      "frequent_urination",
+      "excessive_thirst",
+      "fatigue",
+      "blurred_vision",
+      "slow_healing_sores",
+      "weight_loss"
+    ]
+  },
+  "Hypothyroidism": {
+    "description": "A condition where the thyroid gland doesn't produce enough thyroid hormone.",
+    "precautions": [
+      "Take thyroid medication consistently",
+      "Get regular thyroid level checks",
+      "Maintain a balanced diet",
+      "Report new symptoms to your doctor"
+    ],
+    "home_remedies": [
+      "Eat iodine-rich foods like fish and dairy",
+      "Include selenium sources such as nuts",
+      "Exercise regularly to boost energy",
+      "Take medication consistently as prescribed"
+    ],
+    "specialty": "Endocrinology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "fatigue",
+      "weight_gain",
+      "cold_intolerance",
+      "dry_skin",
+      "constipation",
+      "hair_loss"
+    ]
+  },
+  "Hyperthyroidism": {
+    "description": "A condition where the thyroid gland produces too much thyroid hormone.",
+    "precautions": [
+      "Follow prescribed treatment plan",
+      "Avoid excess iodine",
+      "Manage stress",
+      "Get regular thyroid monitoring"
+    ],
+    "home_remedies": [
+      "Eat calming, balanced meals",
+      "Limit caffeine and stimulants",
+      "Practice relaxation to manage stress",
+      "Ensure you get adequate rest"
+    ],
+    "specialty": "Endocrinology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "weight_loss",
+      "rapid_heartbeat",
+      "sweating",
+      "nervousness",
+      "tremor",
+      "heat_intolerance"
+    ]
+  },
+  "Anemia": {
+    "description": "A condition marked by a deficiency of red blood cells or hemoglobin, reducing oxygen delivery.",
+    "precautions": [
+      "Eat iron-rich foods",
+      "Take supplements as prescribed",
+      "Get evaluated for underlying cause",
+      "Avoid excessive fatigue"
+    ],
+    "home_remedies": [
+      "Eat iron-rich foods like spinach and lentils",
+      "Pair iron foods with vitamin C for absorption",
+      "Include beetroot and dates",
+      "Avoid tea or coffee with meals"
+    ],
+    "specialty": "Hematology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "fatigue",
+      "pale_skin",
+      "shortness_of_breath",
+      "dizziness",
+      "cold_hands",
+      "weakness"
+    ]
+  },
+  "Anxiety Disorder": {
+    "description": "A mental health condition characterized by persistent, excessive worry.",
+    "precautions": [
+      "Practice relaxation and breathing exercises",
+      "Limit caffeine",
+      "Maintain a regular sleep schedule",
+      "Consider speaking with a mental health professional"
+    ],
+    "home_remedies": [
+      "Practice slow, deep breathing exercises",
+      "Try chamomile or green tea",
+      "Exercise or take regular walks",
+      "Limit caffeine and keep a steady sleep routine"
+    ],
+    "specialty": "Psychiatry / Mental Health",
+    "severity": "Medium",
+    "core_symptoms": [
+      "excessive_worry",
+      "restlessness",
+      "rapid_heartbeat",
+      "sweating",
+      "difficulty_concentrating",
+      "irritability"
+    ]
+  },
+  "Depression": {
+    "description": "A mood disorder causing persistent feelings of sadness and loss of interest.",
+    "precautions": [
+      "Reach out to a mental health professional",
+      "Maintain social connections",
+      "Keep a regular routine",
+      "Engage in physical activity"
+    ],
+    "home_remedies": [
+      "Get regular sunlight and fresh air",
+      "Stay physically active",
+      "Maintain social connection",
+      "Keep a consistent daily routine \u2014 seek professional support"
+    ],
+    "specialty": "Psychiatry / Mental Health",
+    "severity": "Medium",
+    "core_symptoms": [
+      "persistent_sadness",
+      "loss_of_interest",
+      "fatigue",
+      "sleep_disturbance",
+      "appetite_change",
+      "difficulty_concentrating"
+    ]
+  },
+  "Insomnia": {
+    "description": "A sleep disorder characterized by difficulty falling or staying asleep.",
+    "precautions": [
+      "Maintain a consistent sleep schedule",
+      "Limit screen time before bed",
+      "Avoid caffeine late in the day",
+      "Create a relaxing bedtime routine"
+    ],
+    "home_remedies": [
+      "Drink warm milk or chamomile tea before bed",
+      "Keep a consistent sleep schedule",
+      "Avoid screens an hour before bed",
+      "Try relaxation or light stretching"
+    ],
+    "specialty": "Sleep Medicine",
+    "severity": "Low",
+    "core_symptoms": [
+      "difficulty_falling_asleep",
+      "waking_at_night",
+      "daytime_fatigue",
+      "irritability",
+      "difficulty_concentrating"
+    ]
+  },
+  "Eczema": {
+    "description": "A condition that makes skin red, inflamed, and itchy.",
+    "precautions": [
+      "Moisturize regularly",
+      "Avoid known irritants",
+      "Use mild, fragrance-free soap",
+      "Avoid scratching"
+    ],
+    "home_remedies": [
+      "Moisturize with a fragrance-free cream",
+      "Apply a cool compress to itchy areas",
+      "Take lukewarm oatmeal baths",
+      "Avoid harsh soaps and known irritants"
+    ],
+    "specialty": "Dermatology",
+    "severity": "Low",
+    "core_symptoms": [
+      "itchy_skin",
+      "dry_skin",
+      "red_rash",
+      "skin_cracking",
+      "inflamed_skin"
+    ]
+  },
+  "Psoriasis": {
+    "description": "A skin disease causing red, itchy scaly patches, most commonly on the knees, elbows, and scalp.",
+    "precautions": [
+      "Moisturize skin daily",
+      "Avoid triggers like stress and injury",
+      "Get moderate sun exposure",
+      "Follow prescribed topical treatment"
+    ],
+    "home_remedies": [
+      "Moisturize skin generously",
+      "Take lukewarm baths with oatmeal or Epsom salt",
+      "Get brief, moderate sunlight",
+      "Apply aloe vera to affected areas"
+    ],
+    "specialty": "Dermatology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "red_patches",
+      "silvery_scales",
+      "itchy_skin",
+      "dry_cracked_skin",
+      "joint_pain"
+    ]
+  },
+  "Acne": {
+    "description": "A skin condition that occurs when hair follicles become plugged with oil and dead skin cells.",
+    "precautions": [
+      "Wash face gently twice daily",
+      "Avoid picking at blemishes",
+      "Use non-comedogenic products",
+      "See a dermatologist for persistent acne"
+    ],
+    "home_remedies": [
+      "Wash the face gently twice daily",
+      "Apply aloe vera or a little honey to spots",
+      "Avoid touching or picking at the skin",
+      "Use a warm compress for painful pimples"
+    ],
+    "specialty": "Dermatology",
+    "severity": "Low",
+    "core_symptoms": [
+      "pimples",
+      "blackheads",
+      "oily_skin",
+      "skin_inflammation",
+      "scarring"
+    ]
+  },
+  "Fungal Skin Infection": {
+    "description": "A skin infection caused by fungi, thriving in warm, moist areas of the body.",
+    "precautions": [
+      "Keep skin clean and dry",
+      "Avoid sharing personal items",
+      "Use antifungal treatment as directed",
+      "Wear breathable clothing"
+    ],
+    "home_remedies": [
+      "Keep the affected area clean and dry",
+      "Apply plain yogurt or diluted tea tree oil",
+      "Wear loose, breathable cotton clothing",
+      "Avoid sharing towels and personal items"
+    ],
+    "specialty": "Dermatology",
+    "severity": "Low",
+    "core_symptoms": [
+      "itchy_skin",
+      "red_rash",
+      "scaly_skin",
+      "skin_peeling",
+      "burning_sensation"
+    ]
+  },
+  "Rheumatoid Arthritis": {
+    "description": "An autoimmune disorder causing joint inflammation, pain, and swelling.",
+    "precautions": [
+      "Stay active with low-impact exercise",
+      "Manage stress",
+      "Follow prescribed treatment plan",
+      "Get regular rest"
+    ],
+    "home_remedies": [
+      "Apply warm or cold packs to sore joints",
+      "Do gentle stretching and low-impact exercise",
+      "Add anti-inflammatory foods like turmeric and ginger",
+      "Get adequate rest"
+    ],
+    "specialty": "Rheumatology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "joint_pain",
+      "joint_swelling",
+      "morning_stiffness",
+      "fatigue",
+      "warm_joints"
+    ]
+  },
+  "Osteoarthritis": {
+    "description": "A degenerative joint disease caused by the breakdown of joint cartilage.",
+    "precautions": [
+      "Maintain a healthy weight",
+      "Engage in low-impact exercise",
+      "Use joint support aids if needed",
+      "Apply heat/cold therapy"
+    ],
+    "home_remedies": [
+      "Apply heat or cold to painful joints",
+      "Do gentle low-impact exercises",
+      "Maintain a healthy weight",
+      "Try adding turmeric to your diet"
+    ],
+    "specialty": "Orthopedics",
+    "severity": "Medium",
+    "core_symptoms": [
+      "joint_pain",
+      "joint_stiffness",
+      "reduced_flexibility",
+      "swelling",
+      "grating_sensation"
+    ]
+  },
+  "Gout": {
+    "description": "A form of inflammatory arthritis caused by excess uric acid, causing sudden, severe joint pain.",
+    "precautions": [
+      "Limit purine-rich foods and alcohol",
+      "Stay hydrated",
+      "Take prescribed medication during flares",
+      "Rest the affected joint"
+    ],
+    "home_remedies": [
+      "Drink plenty of water to flush uric acid",
+      "Apply a cold compress to the joint",
+      "Eat cherries or drink cherry juice",
+      "Avoid alcohol and purine-rich foods"
+    ],
+    "specialty": "Rheumatology",
+    "severity": "Medium",
+    "core_symptoms": [
+      "sudden_joint_pain",
+      "joint_swelling",
+      "redness",
+      "warmth_in_joint",
+      "limited_range_of_motion"
+    ]
+  },
+  "Chronic Fatigue Syndrome": {
+    "description": "A complex disorder characterized by extreme fatigue not explained by an underlying condition.",
+    "precautions": [
+      "Pace activities to avoid overexertion",
+      "Prioritize sleep hygiene",
+      "Manage stress",
+      "Work with a doctor on a management plan"
+    ],
+    "home_remedies": [
+      "Pace activities and rest between tasks",
+      "Keep a consistent sleep routine",
+      "Stay hydrated and eat balanced meals",
+      "Try light stretching or gentle yoga"
+    ],
+    "specialty": "General Medicine",
+    "severity": "Medium",
+    "core_symptoms": [
+      "persistent_fatigue",
+      "muscle_pain",
+      "headache",
+      "poor_sleep",
+      "difficulty_concentrating"
+    ]
+  },
+  "Appendicitis": {
+    "description": "Inflammation of the appendix, a medical emergency usually requiring surgery.",
+    "precautions": [
+      "Seek emergency medical care immediately",
+      "Avoid eating or drinking until evaluated",
+      "Do not take laxatives or pain medication that could mask symptoms"
+    ],
+    "home_remedies": [
+      "Do not eat, drink, or take laxatives",
+      "Avoid placing heating pads on the abdomen",
+      "Rest and stay still",
+      "This is an emergency \u2014 go to a hospital immediately"
+    ],
+    "specialty": "Emergency & General Surgery",
+    "severity": "High",
+    "core_symptoms": [
+      "abdominal_pain",
+      "loss_of_appetite",
+      "nausea",
+      "vomiting",
+      "fever",
+      "pain_moving_to_right_side"
+    ]
+  }
+}

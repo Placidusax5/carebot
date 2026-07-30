@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./database:/app/../database
+      - ./models:/app/../models
+      - ./datasets:/app/../datasets
+    environment:
+      - DATABASE_URL=sqlite:////app/../database/carebot.db
+      - FRONTEND_ORIGIN=http://localhost:5173
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+# For production with PostgreSQL, add a `db` service here and point
+# DATABASE_URL at it, e.g.:
+#   db:
+#     image: postgres:16-alpine
+#     environment:
+#       POSTGRES_USER: carebot
+#       POSTGRES_PASSWORD: carebot
+#       POSTGRES_DB: carebot
+#     volumes:
+#       - pgdata:/var/lib/postgresql/data
+# volumes:
+#   pgdata:
