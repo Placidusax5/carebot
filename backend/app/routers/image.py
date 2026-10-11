@@ -54,8 +54,12 @@ async def image_detect(
         "build — not a medically validated model. It highlights visual features (redness, "
         "texture, pigmentation) but cannot diagnose. Always see a dermatologist to confirm."
         if is_placeholder
-        else "Prediction from a trained CNN model. Still not a substitute for a professional "
-        "diagnosis — see a dermatologist to confirm."
+        else "Prediction from a trained CNN. This model screens for both common skin "
+        "conditions and pigmented lesions, including skin cancers — but it is trained "
+        "on public research datasets, not validated for clinical use, and it can be "
+        "confidently wrong in both directions. A reassuring result is NOT evidence that "
+        "a lesion is harmless. Have any new, changing, bleeding, or non-healing skin "
+        "lesion examined by a dermatologist regardless of what this says."
     )
 
     return ImageDetectResponse(
@@ -64,6 +68,7 @@ async def image_detect(
         predictions=result.get("predictions", []),
         recommendation=result["recommendation"],
         quality_warning=result.get("quality_warning"),
+        escalation=result.get("escalation"),
         is_placeholder_model=is_placeholder,
         note=note,
     )

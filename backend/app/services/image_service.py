@@ -32,12 +32,32 @@ CLASSES = [
     "Likely Normal / Healthy Skin",
 ]
 
+# Classes where a miss is dangerous. These get escalation wording regardless of
+# confidence, and they are never softened by the abstention path below.
+URGENT_CLASSES = {
+    "Melanoma",
+    "Basal Cell Carcinoma",
+    "Actinic Keratosis",
+}
+
 RECOMMENDATIONS = {
+    # --- common inflammatory conditions (DermNet-trained classes) ---
     "Eczema": "Consider moisturizing regularly and avoiding known irritants. See a dermatologist if it persists or worsens.",
     "Psoriasis": "Keep the area moisturized and avoid known triggers. A dermatologist can confirm and recommend treatment.",
     "Fungal Skin Infection": "Keep the area clean and dry. Over-the-counter antifungal treatment may help; see a doctor if it spreads.",
     "Acne": "Gentle cleansing and non-comedogenic products may help. See a dermatologist for persistent or severe acne.",
     "Likely Normal / Healthy Skin": "No obvious concerning features detected. Continue routine skin care and monitor for changes.",
+
+    # --- pigmented / neoplastic lesions (HAM10000-trained classes) ---
+    # Deliberately non-reassuring: a wrong 'benign' reading here costs more than
+    # a wrong 'get it checked' one.
+    "Melanoma": "Please book an urgent in-person dermatology appointment. Features consistent with melanoma need prompt professional assessment - early treatment matters a great deal.",
+    "Basal Cell Carcinoma": "Please arrange a dermatology appointment soon. This pattern can indicate a skin cancer that is highly treatable when caught early.",
+    "Actinic Keratosis": "Have this assessed by a dermatologist. These sun-damage patches are pre-cancerous and are usually straightforward to treat.",
+    "Melanocytic Nevus": "This resembles a common mole. Still have any mole checked if it changes in size, shape, colour, or starts to itch or bleed.",
+    "Benign Keratosis": "This resembles a non-cancerous age-related growth. Worth confirming with a dermatologist, especially if it has changed recently.",
+    "Dermatofibroma": "This resembles a benign skin nodule. Have it confirmed by a clinician if it grows, changes, or becomes painful.",
+    "Vascular Lesion": "This resembles a benign blood-vessel lesion. Have it reviewed if it bleeds, grows, or changes appearance.",
 }
 
 _WORK_SIZE = 160  # analysis resolution
@@ -185,6 +205,44 @@ def _classify_heuristic(image_bytes: bytes) -> dict:
     }
 
 
+# Below this top-1 probability the model is not separating the classes well
+# enough to name one, so we say so instead of showing a confident label.
+_ABSTAIN_BELOW = 0.40
+
+
+def _escalation(probs: np.ndarray, labels: List[str], top_label: str) -> Optional[str]:
+    """Warn when a malignant class has meaningful probability but did not win.
+
+    argmax alone is the wrong rule for this model. On the held-out test split
+    41% of melanomas were labelled as something benign - most often
+    Melanocytic Nevus - so a user with a melanoma could be shown "common mole"
+    and nothing else. This surfaces the malignant possibility whenever it
+    clears settings.IMAGE_ESCALATION_THRESHOLD, regardless of the top class.
+
+    Deliberately asymmetric: it costs a false alarm to be wrong here, versus a
+    missed cancer to be wrong the other way.
+    """
+    hits = [
+        (labels[i], float(probs[i]))
+        for i in range(min(len(labels), len(probs)))
+        if labels[i] in URGENT_CLASSES
+        and float(probs[i]) >= settings.IMAGE_ESCALATION_THRESHOLD
+    ]
+    if not hits:
+        return None
+    hits.sort(key=lambda h: h[1], reverse=True)
+    named = ", ".join("%s (%.0f%%)" % (lab, p * 100) for lab, p in hits)
+
+    if hits[0][0] == top_label:
+        return ("This image shows features the model associates with %s. Please "
+                "arrange an in-person dermatology assessment promptly." % named)
+    return ("The most likely result above is %s, but this image also shows "
+            "features the model associates with %s. This model misses a "
+            "substantial share of malignant lesions, so please have the area "
+            "assessed in person by a dermatologist rather than relying on the "
+            "leading result." % (top_label, named))
+
+
 def _classify_with_cnn(cnn, image_bytes: bytes) -> dict:
     img = Image.open(io.BytesIO(image_bytes)).convert("RGB").resize((224, 224))
     # Raw 0-255 pixels: the trained model (scripts/train_image_model.py) bakes
@@ -194,12 +252,40 @@ def _classify_with_cnn(cnn, image_bytes: bytes) -> dict:
     labels = _cnn_labels or CLASSES
     predictions = _top3(preds, labels)
     top = predictions[0]
+
+    # The quality gate applies to the CNN too. A trained model will happily
+    # return a confident label for a blurry, dark, or non-skin photo, and the
+    # output is trusted more than the heuristic's - so it matters more here.
+    warning = _quality_warning(_extract_features(image_bytes))
+
+    recommendation = RECOMMENDATIONS.get(
+        top["label"], "See a dermatologist for professional evaluation."
+    )
+
+    escalation = _escalation(preds, labels, top["label"])
+
+    # Low-confidence abstention. Skipped whenever an escalation is in play: a
+    # vague "nothing stood out" message must never displace a cancer warning.
+    if (escalation is None
+            and top["confidence"] < _ABSTAIN_BELOW * 100
+            and top["label"] not in URGENT_CLASSES):
+        recommendation = (
+            "No single condition stood out clearly in this photo. The possibilities "
+            "above are low-confidence - please have the area looked at by a "
+            "clinician rather than relying on this result."
+        )
+        warning = warning or (
+            "The model could not confidently separate this image between conditions. "
+            "Treat the result as a weak signal only."
+        )
+
     return {
         "predicted_class": top["label"],
         "confidence": top["confidence"],
         "predictions": predictions,
-        "recommendation": RECOMMENDATIONS.get(top["label"], "See a dermatologist for professional evaluation."),
-        "quality_warning": None,
+        "recommendation": recommendation,
+        "quality_warning": warning,
+        "escalation": escalation,
         "is_placeholder_model": False,
     }
 

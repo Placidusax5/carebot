@@ -1,10 +1,13 @@
 {
-  "accuracy": 0.9958333333333333,
+  "accuracy": 0.9887892376681614,
   "top3_accuracy": 1.0,
-  "cv_accuracy_mean": 0.9955,
-  "cv_accuracy_std": 0.0020138409955990995,
+  "cv_accuracy_mean": 0.9932725348919231,
+  "cv_accuracy_std": 0.0037506345895189164,
   "n_classes": 40,
   "n_features": 134,
-  "n_train": 4800,
-  "n_test": 1200
+  "n_train": 1783,
+  "n_test": 446,
+  "n_rows_before_dedup": 6000,
+  "split": "deduplicated on symptom pattern, stratified 80/20",
+  "model": "RandomForestClassifier"
 }

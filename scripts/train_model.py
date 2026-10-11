@@ -28,6 +28,17 @@ df = pd.read_csv(os.path.join(DATASETS, "symptom_disease_dataset.csv"))
 with open(os.path.join(DATASETS, "symptoms_list.json")) as f:
     symptoms = json.load(f)
 
+# Deduplicate on the symptom pattern before splitting.
+#
+# generate_dataset.py samples from each disease's fixed symptom list, so the
+# 6000 rows collapse to ~2229 distinct patterns. Splitting the raw rows puts
+# 75% of the test set verbatim into training, which inflated the reported
+# accuracy to ~99.6%. The honest figure on unseen patterns is ~99.1%.
+# scripts/train_disease_nn.py splits the same way, so the two are comparable.
+rows_before = len(df)
+df = df.drop_duplicates(subset=symptoms).reset_index(drop=True)
+print(f"Deduplicated {rows_before} rows -> {len(df)} unique symptom patterns")
+
 X = df[symptoms]
 y_raw = df["prognosis"]
 
@@ -81,6 +92,9 @@ with open(os.path.join(MODELS, "model_metrics.json"), "w") as f:
         "n_features": len(symptoms),
         "n_train": len(X_train),
         "n_test": len(X_test),
+        "n_rows_before_dedup": rows_before,
+        "split": "deduplicated on symptom pattern, stratified 80/20",
+        "model": "RandomForestClassifier",
     }, f, indent=2)
 
 print("Saved model artifacts to models/")

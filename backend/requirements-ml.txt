@@ -1,5 +1,9 @@
-# Optional heavy ML dependency for the image-detection CNN.
-# Kept out of requirements.txt so the base API/image stays lightweight.
+# Optional heavy ML dependency for the deep-learning models:
+#   - the image-detection CNN      (models/image_model/)
+#   - the disease-prediction MLP   (models/disease_nn/)
+# Kept out of requirements.txt so the base API/image stays lightweight. Without
+# it the app still runs: image detection uses the feature heuristic and disease
+# prediction uses the RandomForest.
 #
 # Install into the backend venv when you want to train / run the real CNN:
 #     pip install -r requirements-ml.txt

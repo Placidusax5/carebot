@@ -1,0 +1,39 @@
+{
+  "models": [
+    {
+      "name": "Neural net",
+      "top1": 0.9940298507462687,
+      "top3": 1.0,
+      "macro_f1": 0.9934278002699056,
+      "ece": 0.048779196703611916,
+      "pct_saying_100": 0.0,
+      "median_confidence": 0.9747195243835449,
+      "pct_third_is_zero": 0.0
+    },
+    {
+      "name": "RandomForest",
+      "top1": 0.991044776119403,
+      "top3": 1.0,
+      "macro_f1": 0.9898684210526316,
+      "ece": 0.14898507462686558,
+      "pct_saying_100": 0.1044776119402985,
+      "median_confidence": 0.86,
+      "pct_third_is_zero": 0.19402985074626866
+    }
+  ],
+  "n_train": 1559,
+  "n_val": 335,
+  "n_test": 335,
+  "n_classes": 40,
+  "n_features": 134,
+  "split": "deduplicated on symptom pattern, stratified 70/15/15",
+  "config": {
+    "hidden": [
+      256,
+      128
+    ],
+    "dropout": 0.4,
+    "label_smoothing": 0.05
+  },
+  "tuned": true
+}

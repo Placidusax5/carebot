@@ -91,6 +91,9 @@ class ImageDetectResponse(BaseModel):
     predictions: List[ImagePrediction] = []
     recommendation: str
     quality_warning: Optional[str] = None
+    # Set when the CNN puts meaningful probability on a malignant class, even
+    # if a benign class won. Render this more prominently than the prediction.
+    escalation: Optional[str] = None
     is_placeholder_model: bool = True
     note: str = (
         "Image classification is running on a transparent feature-based heuristic in this "

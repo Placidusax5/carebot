@@ -31,6 +31,14 @@ class Settings:
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
     ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY", "")
 
+    # If the image CNN puts at least this much probability on a malignant or
+    # pre-malignant class, the response escalates even when the top prediction
+    # is something benign. Tune it with scripts/tune_escalation.py - the
+    # default is a starting point, not an evidence-based choice.
+    IMAGE_ESCALATION_THRESHOLD: float = float(
+        os.getenv("IMAGE_ESCALATION_THRESHOLD", "0.15")
+    )
+
 
 settings = Settings()
 settings.UPLOADS_DIR.mkdir(parents=True, exist_ok=True)

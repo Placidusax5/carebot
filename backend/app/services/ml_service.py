@@ -20,6 +20,19 @@ _label_encoder = None
 _symptoms: List[str] = []
 _disease_info: dict = {}
 
+# Optional neural network (scripts/train_disease_nn.py). Preferred when present
+# because it is better calibrated than the forest: the RandomForest returns
+# tree-vote fractions, so it claims exactly 100% on a tenth of inputs and gives
+# the third-ranked class a hard zero ~19% of the time, which made this module
+# drop it and return fewer than the three predictions the UI promises.
+_nn = None
+_nn_labels: List[str] = []
+_nn_checked = False
+
+# Softmax never returns exact zero, so "> 0" would no longer filter anything
+# and the UI would render 40-class noise at 0.001%. Use a real floor.
+_MIN_CONFIDENCE = 0.005
+
 
 def _load():
     global _model, _label_encoder, _symptoms, _disease_info
@@ -43,6 +56,42 @@ def _load():
         _symptoms = json.load(f)
     with open(info_path) as f:
         _disease_info = json.load(f)
+
+
+def _try_load_nn():
+    """Load the MLP from models/disease_nn/ if it is there and TensorFlow is
+    installed. Returns None to stay on the RandomForest."""
+    global _nn, _nn_labels, _nn_checked
+    if _nn_checked:
+        return _nn
+    _nn_checked = True
+
+    model_dir = settings.MODELS_DIR / "disease_nn"
+    model_file = model_dir / "model.keras"
+    if not model_file.exists():
+        return None
+    try:
+        import tensorflow as tf  # only needed when a net is actually present
+
+        trained_on = json.loads((model_dir / "symptoms_list.json").read_text())
+        # The input vector is built from _symptoms by position. If the feature
+        # order the net was trained on has drifted, every symptom would land in
+        # the wrong slot and the model would return confident nonsense - so
+        # fall back to the forest rather than serve garbage.
+        if trained_on != _symptoms:
+            return None
+
+        _nn = tf.keras.models.load_model(str(model_file))
+        _nn_labels = json.loads((model_dir / "labels.json").read_text())
+    except Exception:
+        _nn = None  # any failure -> RandomForest
+    return _nn
+
+
+def active_model_name() -> str:
+    """Which model is actually serving predictions."""
+    _load()
+    return "neural_net" if _try_load_nn() is not None else "random_forest"
 
 
 def get_known_symptoms() -> List[str]:
@@ -98,17 +147,24 @@ def predict_disease(symptoms: List[str], top_k: int = 3) -> dict:
             "specialty": "General Medicine",
         }
 
-    input_df = pd.DataFrame(input_vector, columns=_symptoms)
-    proba = _model.predict_proba(input_df)[0]
+    nn = _try_load_nn()
+    if nn is not None:
+        proba = np.asarray(nn.predict(input_vector.astype("float32"), verbose=0))[0]
+        class_names = _nn_labels
+    else:
+        input_df = pd.DataFrame(input_vector, columns=_symptoms)
+        proba = _model.predict_proba(input_df)[0]
+        class_names = _label_encoder.classes_
+
     top_idx = np.argsort(proba)[-top_k:][::-1]
 
     predictions = [
-        {"disease": _label_encoder.classes_[i], "confidence": round(float(proba[i]) * 100, 2)}
+        {"disease": class_names[i], "confidence": round(float(proba[i]) * 100, 2)}
         for i in top_idx
-        if proba[i] > 0
+        if proba[i] >= _MIN_CONFIDENCE
     ]
     if not predictions:
-        predictions = [{"disease": _label_encoder.classes_[top_idx[0]], "confidence": round(float(proba[top_idx[0]]) * 100, 2)}]
+        predictions = [{"disease": class_names[top_idx[0]], "confidence": round(float(proba[top_idx[0]]) * 100, 2)}]
 
     top = predictions[0]
     info = get_disease_info(top["disease"])

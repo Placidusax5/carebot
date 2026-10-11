@@ -20,6 +20,11 @@ database/uploaded_images/*
 # Models (regenerate via scripts/train_model.py, or keep if you want to ship a pretrained one)
 # models/*.joblib
 
+# Skin-image training data. The manifest stores absolute local paths, so it is
+# machine-specific; the image sets themselves are multi-GB Kaggle downloads.
+datasets/skin_manifest.csv
+datasets/skin_images/
+
 # OS/editor
 .DS_Store
 .vscode/
